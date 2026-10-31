@@ -118,7 +118,9 @@ jobs:
             echo "== Pulling images ($IMAGE_TAG) =="
             echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
             export IMAGE_TAG
-            docker compose -f docker-compose.yml pull
+            # Only our own images: minio/minio is no longer pullable from Docker Hub,
+            # so the copy already on the instance keeps being used.
+            docker compose -f docker-compose.yml pull web admin space api worker migrator live proxy
             docker logout ghcr.io
 
             echo "== Restarting =="
