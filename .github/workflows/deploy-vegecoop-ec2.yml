@@ -118,6 +118,8 @@ jobs:
             echo "== Pulling images ($IMAGE_TAG) =="
             echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
             export IMAGE_TAG
+            # Saved in .env so manual `docker compose` runs on the instance use the deployed images
+            if grep -q '^IMAGE_TAG=' .env; then sed -i "s|^IMAGE_TAG=.*|IMAGE_TAG=$IMAGE_TAG|" .env; else echo "IMAGE_TAG=$IMAGE_TAG" >> .env; fi
             # Only our own images: minio/minio is no longer pullable from Docker Hub,
             # so the copy already on the instance keeps being used.
             docker compose -f docker-compose.yml pull web admin space api worker migrator live proxy
@@ -138,7 +140,7 @@ jobs:
       - name: Health check
         run: |
           for i in 1 2 3 4 5 6; do
-            code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "http://${{ secrets.EC2_HOST }}/api/instances/")
+            code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "https://system-progress.vegecoop.net/api/instances/")
             if [ "$code" = "200" ]; then
               echo "Health check passed (HTTP $code)"
               exit 0

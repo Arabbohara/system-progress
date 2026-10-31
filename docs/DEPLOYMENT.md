@@ -6,13 +6,15 @@ Compose.
 
 ## Access
 
-| App                        | URL                             | Notes                                                      |
-| -------------------------- | ------------------------------- | ---------------------------------------------------------- |
-| Main app                   | `http://13.230.86.17/`          | Sign in / workspaces                                       |
-| Admin console ("God Mode") | `http://13.230.86.17/god-mode/` | Instance-wide settings: email, storage, AI, auth providers |
-| Publish (Space)            | `http://13.230.86.17/spaces/`   | Public board/roadmap sharing                               |
+| App                        | URL                                              | Notes                                                      |
+| -------------------------- | ------------------------------------------------ | ---------------------------------------------------------- |
+| Main app                   | `https://system-progress.vegecoop.net/`          | Sign in / workspaces                                       |
+| Admin console ("God Mode") | `https://system-progress.vegecoop.net/god-mode/` | Instance-wide settings: email, storage, AI, auth providers |
+| Publish (Space)            | `https://system-progress.vegecoop.net/spaces/`   | Public board/roadmap sharing                               |
 
-The IP is an **Elastic IP**, so it stays fixed across instance stops/starts unless someone
+`system-progress.vegecoop.net` is an A record (DNS at Sakura, `ns1/ns2.dns.ne.jp`) pointing at
+the server's IP `13.230.86.17`. Caddy gets the HTTPS certificate from Let's Encrypt on its own
+(`SITE_ADDRESS` in the root `.env`). The IP is an **Elastic IP**, so it stays fixed across instance stops/starts unless someone
 explicitly re-associates it. If it ever changes again, see "Changing the server IP" below —
 several places need updating in lockstep or the app breaks.
 
@@ -150,8 +152,9 @@ containers:
 2. `apps/live/.env`: `WEB_BASE_URL`, `LIVE_BASE_URL`
 3. `packages/constants/src/metadata.ts`: `SITE_URL`, `SPACE_SITE_URL` (cosmetic, but keeps
    OG/meta tags accurate)
-4. The `EC2_HOST` GitHub Actions secret (or the next auto-deploy will fail to SSH in)
-5. Recreate containers: `docker compose -f docker-compose.yml up -d --no-deps api worker live`
+4. The `system-progress.vegecoop.net` A record at Sakura (DNS)
+5. The `EC2_HOST` GitHub Actions secret (or the next auto-deploy will fail to SSH in)
+6. Recreate containers: `docker compose -f docker-compose.yml up -d --no-deps api worker live`
 
 ## Backups
 
