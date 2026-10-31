@@ -1,35 +1,107 @@
 name: Deploy vegecoop to EC2
 
+# Images are built here on GitHub's runners and pushed to GHCR, so the EC2
+# instance (t3.small, 2 GB RAM) only pulls and restarts containers. Building
+# the Node apps on the instance itself needs far more memory than it has.
+
 on:
   push:
     branches:
       - vegecoop-main
   workflow_dispatch: {}
 
+concurrency:
+  group: deploy-vegecoop-ec2
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  packages: write
+
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - name: web
+            context: .
+            dockerfile: apps/web/Dockerfile.web
+          - name: admin
+            context: .
+            dockerfile: apps/admin/Dockerfile.admin
+          - name: space
+            context: .
+            dockerfile: apps/space/Dockerfile.space
+          - name: live
+            context: .
+            dockerfile: apps/live/Dockerfile.live
+          - name: api
+            context: apps/api
+            dockerfile: apps/api/Dockerfile.api
+          - name: proxy
+            context: apps/proxy
+            dockerfile: apps/proxy/Dockerfile.ce
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Image name
+        id: image
+        run: echo "name=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/vegecoop-${{ matrix.name }}" >> "$GITHUB_OUTPUT"
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: docker/build-push-action@v6
+        with:
+          context: ${{ matrix.context }}
+          file: ${{ matrix.dockerfile }}
+          push: true
+          tags: |
+            ${{ steps.image.outputs.name }}:${{ github.sha }}
+            ${{ steps.image.outputs.name }}:latest
+          cache-from: type=gha,scope=${{ matrix.name }}
+          cache-to: type=gha,mode=max,scope=${{ matrix.name }}
+
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Deploy over SSH
         uses: appleboy/ssh-action@v1.0.3
+        env:
+          IMAGE_TAG: ${{ github.sha }}
+          GHCR_USER: ${{ github.actor }}
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
+          envs: IMAGE_TAG,GHCR_USER,GHCR_TOKEN
           timeout: 30s
           command_timeout: 30m
           script: |
             set -e
             cd /home/ec2-user/plane
 
-            echo "== Freeing disk space =="
-            df -h / | tail -1
-            # Old images and build cache pile up with every rebuild and filled the disk once.
-            # Only build cache and images unused by any container are removed; volumes
-            # (database, uploads) are never touched.
-            docker builder prune -af
-            docker image prune -af
-            df -h / | tail -1
+            echo "== Ensuring swap =="
+            # 2 GB RAM is tight for this stack; swap absorbs short spikes instead of OOM kills.
+            if ! sudo swapon --show | grep -q /swapfile; then
+              if [ ! -f /swapfile ]; then
+                sudo dd if=/dev/zero of=/swapfile bs=1M count=2048 status=none
+                sudo chmod 600 /swapfile
+                sudo mkswap /swapfile
+              fi
+              sudo swapon /swapfile
+              grep -q '^/swapfile ' /etc/fstab || echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+            fi
+            free -h
 
             echo "== Backing up database =="
             mkdir -p /home/ec2-user/backups
@@ -43,8 +115,20 @@ jobs:
             git fetch origin vegecoop-main
             git reset --hard origin/vegecoop-main
 
-            echo "== Rebuilding and restarting =="
-            docker compose -f docker-compose.yml up -d --build
+            echo "== Pulling images ($IMAGE_TAG) =="
+            echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
+            export IMAGE_TAG
+            docker compose -f docker-compose.yml pull
+            docker logout ghcr.io
+
+            echo "== Restarting =="
+            # --remove-orphans stops containers no longer in the compose file (plane-mq, beatworker).
+            docker compose -f docker-compose.yml up -d --no-build --remove-orphans
+
+            echo "== Freeing disk space =="
+            docker image prune -af
+            docker builder prune -af
+            df -h / | tail -1
 
             echo "== Waiting for services to settle =="
             sleep 20

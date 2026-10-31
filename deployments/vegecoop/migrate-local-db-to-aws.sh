@@ -88,7 +88,7 @@ echo "== Uploading local dump to EC2 =="
 $SCP "$WORKDIR/local-migration-$TS.pgdump" "$EC2_USER@$EC2_HOST:$REMOTE_BACKUP_DIR/local-migration-$TS.pgdump"
 
 echo "== Stopping app containers that write to the DB =="
-$SSH "cd $REMOTE_APP_DIR && docker compose -f docker-compose.yml stop api worker beat-worker live migrator"
+$SSH "cd $REMOTE_APP_DIR && docker compose -f docker-compose.yml stop api worker live migrator"
 
 echo "== Restoring local dump into the remote database =="
 $SSH "docker cp $REMOTE_BACKUP_DIR/local-migration-$TS.pgdump plane-db:/tmp/restore.pgdump"
@@ -127,7 +127,7 @@ Remote DB was overwritten with your local dump.
 ROLLBACK (restore the pre-migration state):
   ssh -i $EC2_KEY $EC2_USER@$EC2_HOST
   cd $REMOTE_APP_DIR
-  docker compose -f docker-compose.yml stop api worker beat-worker live migrator
+  docker compose -f docker-compose.yml stop api worker live migrator
   docker cp $REMOTE_BACKUP_DIR/pre-migration-$TS.pgdump plane-db:/tmp/rollback.pgdump
   docker exec plane-db sh -c 'pg_restore -U $POSTGRES_USER -d $POSTGRES_DB --clean --if-exists --no-owner /tmp/rollback.pgdump'
   docker exec plane-db rm /tmp/rollback.pgdump

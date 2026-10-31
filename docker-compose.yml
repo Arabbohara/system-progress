@@ -1,50 +1,64 @@
+# Sized for a single small EC2 instance (t3.small, 2 GB RAM).
+# Images are built by GitHub Actions and pulled from GHCR (see
+# .github/workflows/deploy-vegecoop-ec2.yml); `build:` is kept so
+# `docker compose build` still works locally.
+x-api-common: &api-common
+  image: ${REGISTRY:-ghcr.io/arabbohara}/vegecoop-api:${IMAGE_TAG:-latest}
+  env_file:
+    - ./apps/api/.env
+  environment:
+    # Celery uses Redis DB 1 as its queue instead of RabbitMQ.
+    # DB 0 is the Django cache, which `clear_cache` flushes on every API start.
+    AMQP_URL: redis://plane-redis:6379/1
+
 services:
   web:
     container_name: web
+    image: ${REGISTRY:-ghcr.io/arabbohara}/vegecoop-web:${IMAGE_TAG:-latest}
     build:
       context: .
       dockerfile: ./apps/web/Dockerfile.web
-      args:
-        DOCKER_BUILDKIT: 1
     restart: always
+    mem_limit: 64m
     depends_on:
       - api
 
   admin:
     container_name: admin
+    image: ${REGISTRY:-ghcr.io/arabbohara}/vegecoop-admin:${IMAGE_TAG:-latest}
     build:
       context: .
       dockerfile: ./apps/admin/Dockerfile.admin
-      args:
-        DOCKER_BUILDKIT: 1
     restart: always
+    mem_limit: 64m
     depends_on:
       - api
       - web
 
   space:
     container_name: space
+    image: ${REGISTRY:-ghcr.io/arabbohara}/vegecoop-space:${IMAGE_TAG:-latest}
     build:
       context: .
       dockerfile: ./apps/space/Dockerfile.space
-      args:
-        DOCKER_BUILDKIT: 1
     restart: always
+    mem_limit: 64m
     depends_on:
       - api
       - web
 
   api:
+    <<: *api-common
     container_name: api
     build:
       context: ./apps/api
       dockerfile: Dockerfile.api
-      args:
-        DOCKER_BUILDKIT: 1
     restart: always
     command: ./bin/docker-entrypoint-api.sh
-    env_file:
-      - ./apps/api/.env
+    mem_limit: 600m
+    environment:
+      AMQP_URL: redis://plane-redis:6379/1
+      GUNICORN_WORKERS: 2
     depends_on:
       plane-db:
         condition: service_started
@@ -54,61 +68,39 @@ services:
       migrator:
         condition: service_completed_successfully
 
+  # One process runs both the Celery worker and the beat scheduler (-B),
+  # replacing the separate worker and beat-worker containers.
   worker:
+    <<: *api-common
     container_name: bgworker
-    build:
-      context: ./apps/api
-      dockerfile: Dockerfile.api
-      args:
-        DOCKER_BUILDKIT: 1
     restart: always
-    command: ./bin/docker-entrypoint-worker.sh
-    env_file:
-      - ./apps/api/.env
-    depends_on:
-      - api
-      - plane-db
-      - plane-redis
-
-  beat-worker:
-    container_name: beatworker
-    build:
-      context: ./apps/api
-      dockerfile: Dockerfile.api
-      args:
-        DOCKER_BUILDKIT: 1
-    restart: always
-    command: ./bin/docker-entrypoint-beat.sh
-    env_file:
-      - ./apps/api/.env
+    command: >
+      bash -c "python manage.py wait_for_db &&
+      python manage.py wait_for_migrations &&
+      exec celery -A plane worker -B -l info --concurrency=2"
+    mem_limit: 500m
     depends_on:
       - api
       - plane-db
       - plane-redis
 
   migrator:
+    <<: *api-common
     container_name: plane-migrator
-    build:
-      context: ./apps/api
-      dockerfile: Dockerfile.api
-      args:
-        DOCKER_BUILDKIT: 1
     restart: no
     command: ./bin/docker-entrypoint-migrator.sh
-    env_file:
-      - ./apps/api/.env
     depends_on:
       - plane-db
       - plane-redis
 
   live:
     container_name: plane-live
+    image: ${REGISTRY:-ghcr.io/arabbohara}/vegecoop-live:${IMAGE_TAG:-latest}
     build:
       context: .
       dockerfile: ./apps/live/Dockerfile.live
-      args:
-        DOCKER_BUILDKIT: 1
     restart: always
+    mem_limit: 200m
     env_file:
       - ./apps/live/.env
     depends_on:
@@ -118,7 +110,14 @@ services:
     container_name: plane-db
     image: postgres:15.7-alpine
     restart: always
-    command: postgres -c 'max_connections=1000'
+    # Small-instance tuning: 1000 connections reserved memory nobody used.
+    command: >
+      postgres -c max_connections=100
+      -c shared_buffers=128MB
+      -c effective_cache_size=384MB
+      -c work_mem=4MB
+      -c maintenance_work_mem=32MB
+    mem_limit: 400m
     volumes:
       - pgdata:/var/lib/postgresql/data
     env_file:
@@ -133,27 +132,16 @@ services:
     container_name: plane-redis
     image: valkey/valkey:7.2.11-alpine
     restart: always
+    mem_limit: 200m
     volumes:
       - redisdata:/data
-
-  plane-mq:
-    container_name: plane-mq
-    image: rabbitmq:3.13.6-management-alpine
-    restart: always
-    env_file:
-      - .env
-    environment:
-      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
-      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
-      RABBITMQ_DEFAULT_VHOST: ${RABBITMQ_VHOST}
-    volumes:
-      - rabbitmq_data:/var/lib/rabbitmq
 
   plane-minio:
     container_name: plane-minio
     image: minio/minio
     restart: always
     command: server /export --console-address ":9090"
+    mem_limit: 200m
     volumes:
       - uploads:/export
     environment:
@@ -163,10 +151,12 @@ services:
   # Comment this if you already have a reverse proxy running
   proxy:
     container_name: proxy
+    image: ${REGISTRY:-ghcr.io/arabbohara}/vegecoop-proxy:${IMAGE_TAG:-latest}
     build:
       context: ./apps/proxy
       dockerfile: Dockerfile.ce
     restart: always
+    mem_limit: 96m
     env_file:
       - .env
     ports:
@@ -185,4 +175,3 @@ volumes:
   pgdata:
   redisdata:
   uploads:
-  rabbitmq_data:
