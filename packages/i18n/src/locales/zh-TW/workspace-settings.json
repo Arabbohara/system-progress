@@ -98,7 +98,9 @@
         "access_public": "僅公開專案",
         "self_join_hint": "自行加入部門只能存取其公開專案。管理員可以授予私密專案的存取權限。",
         "via_department": "透過{name}",
-        "via_department_tooltip": "透過部門新增。退出此部門將移除此存取權限。"
+        "via_department_tooltip": "透過部門新增。退出此部門將移除此存取權限。",
+        "join_all": "加入所有部門",
+        "joined_all_toast": "{count, plural, one {已加入 # 個部門} other {已加入 # 個部門}}"
       },
       "billing_and_plans": {
         "heading": "計費與方案",

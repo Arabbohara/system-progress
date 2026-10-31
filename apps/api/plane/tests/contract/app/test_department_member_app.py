@@ -388,3 +388,56 @@ class TestDepartmentMembership:
         sources = {str(row["member"]): row["source_department"] for row in response.data}
         assert sources[str(member_user.id)] == department.id
         assert sources[str(create_user.id)] is None
+
+
+@pytest.mark.contract
+@pytest.mark.django_db
+class TestDepartmentBulkJoin:
+    def test_join_all_departments(self, workspace, create_user, department, other_department, member_user):
+        sales = _make_project(workspace, create_user, "Sales A", "SLA", department)
+        logistics = _make_project(workspace, create_user, "Logistics", "LOG", other_department)
+
+        response = _client(member_user).post(f"/api/workspaces/{workspace.slug}/departments/join/", {}, format="json")
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert len(response.data) == 2
+        for project, source in ((sales, department), (logistics, other_department)):
+            membership = _membership(project, member_user)
+            assert membership.is_active is True
+            assert membership.role == 15
+            assert membership.source_department_id == source.id
+
+    def test_join_all_skips_departments_already_joined(self, workspace, department, other_department, member_user):
+        client = _client(member_user)
+        client.post(f"/api/workspaces/{workspace.slug}/departments/{department.id}/join/")
+
+        response = client.post(f"/api/workspaces/{workspace.slug}/departments/join/", {}, format="json")
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert [row["department_id"] for row in response.data] == [other_department.id]
+        assert DepartmentMember.objects.filter(member=member_user).count() == 2
+
+    def test_join_selected_departments(self, workspace, department, other_department, member_user):
+        response = _client(member_user).post(
+            f"/api/workspaces/{workspace.slug}/departments/join/",
+            {"department_ids": [str(department.id)]},
+            format="json",
+        )
+
+        assert response.status_code == status.HTTP_201_CREATED
+        assert list(DepartmentMember.objects.filter(member=member_user).values_list("department_id", flat=True)) == [
+            department.id
+        ]
+
+    def test_join_all_skips_secret_projects(self, workspace, create_user, department, member_user):
+        secret = _make_project(workspace, create_user, "Sales Secret", "SLS", department, network=0)
+
+        _client(member_user).post(f"/api/workspaces/{workspace.slug}/departments/join/", {}, format="json")
+
+        assert _membership(secret, member_user) is None
+
+    def test_guest_cannot_join_all(self, workspace, department, guest_user):
+        response = _client(guest_user).post(f"/api/workspaces/{workspace.slug}/departments/join/", {}, format="json")
+
+        assert response.status_code == status.HTTP_403_FORBIDDEN
+        assert not DepartmentMember.objects.filter(member=guest_user).exists()

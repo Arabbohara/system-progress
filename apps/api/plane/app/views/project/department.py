@@ -225,3 +225,37 @@ class DepartmentJoinEndpoint(BaseAPIView):
             revoke_department_member_access(department_member.department_id, department_member.member_id)
             department_member.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class DepartmentBulkJoinEndpoint(BaseAPIView):
+    @allow_permission([ROLE.ADMIN, ROLE.MEMBER], level="WORKSPACE")
+    def post(self, request, slug):
+        """Join several departments at once; without `department_ids`, join every department."""
+        departments = Department.objects.filter(workspace__slug=slug)
+        department_ids = request.data.get("department_ids")
+        if department_ids is not None:
+            if not isinstance(department_ids, list):
+                return Response({"error": "`department_ids` must be a list"}, status=status.HTTP_400_BAD_REQUEST)
+            departments = departments.filter(pk__in=department_ids)
+
+        joined_department_ids = DepartmentMember.objects.filter(workspace__slug=slug, member=request.user).values_list(
+            "department_id", flat=True
+        )
+        departments = departments.exclude(pk__in=joined_department_ids)
+
+        department_members = []
+        with transaction.atomic():
+            for department in departments:
+                # Same rule as joining one department: only its public projects are granted
+                department_member = DepartmentMember.objects.create(
+                    workspace_id=department.workspace_id,
+                    department=department,
+                    member=request.user,
+                    role=ROLE.MEMBER.value,
+                    full_access=False,
+                )
+                sync_department_member_access(department_member)
+                department_members.append(department_member)
+
+        serializer = DepartmentMemberSerializer(department_members, many=True)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)

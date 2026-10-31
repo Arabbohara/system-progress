@@ -98,7 +98,9 @@
         "access_public": "仅公开项目",
         "self_join_hint": "自行加入部门只能访问其公开项目。管理员可以授予私密项目的访问权限。",
         "via_department": "通过{name}",
-        "via_department_tooltip": "通过部门添加。退出该部门将移除此访问权限。"
+        "via_department_tooltip": "通过部门添加。退出该部门将移除此访问权限。",
+        "join_all": "加入所有部门",
+        "joined_all_toast": "{count, plural, one {已加入 # 个部门} other {已加入 # 个部门}}"
       },
       "billing_and_plans": {
         "heading": "账单与计划",

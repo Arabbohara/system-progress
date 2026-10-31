@@ -102,6 +102,17 @@ export class DepartmentService extends APIService {
       });
   }
 
+  async joinDepartments(workspaceSlug: string, departmentIds?: string[]): Promise<TDepartmentMember[]> {
+    return this.post(
+      `/api/workspaces/${workspaceSlug}/departments/join/`,
+      departmentIds ? { department_ids: departmentIds } : {}
+    )
+      .then((response) => response?.data)
+      .catch((error) => {
+        throw error?.response?.data;
+      });
+  }
+
   async leaveDepartment(workspaceSlug: string, departmentId: string): Promise<void> {
     return this.delete(`/api/workspaces/${workspaceSlug}/departments/${departmentId}/join/`)
       .then((response) => response?.data)

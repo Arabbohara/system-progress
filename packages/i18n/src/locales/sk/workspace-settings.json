@@ -98,7 +98,9 @@
         "access_public": "Iba verejné projekty",
         "self_join_hint": "Samostatné pripojenie k oddeleniu poskytuje prístup k jeho verejným projektom. Prístup k súkromným projektom môže udeliť správca.",
         "via_department": "cez {name}",
-        "via_department_tooltip": "Pridané cez oddelenie. Opustením oddelenia sa tento prístup odstráni."
+        "via_department_tooltip": "Pridané cez oddelenie. Opustením oddelenia sa tento prístup odstráni.",
+        "join_all": "Pripojiť sa ku všetkým oddeleniam",
+        "joined_all_toast": "{count, plural, one {Pripojené k # oddeleniu} few {Pripojené k # oddeleniam} many {Pripojené k # oddelenia} other {Pripojené k # oddeleniam}}"
       },
       "billing_and_plans": {
         "heading": "Fakturácia a plány",

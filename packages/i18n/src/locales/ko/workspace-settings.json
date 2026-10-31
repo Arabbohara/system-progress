@@ -98,7 +98,9 @@
         "access_public": "공개 프로젝트만",
         "self_join_hint": "직접 부서에 참여하면 해당 부서의 공개 프로젝트에 액세스할 수 있습니다. 비공개 프로젝트 액세스 권한은 관리자가 부여할 수 있습니다.",
         "via_department": "{name} 경유",
-        "via_department_tooltip": "부서를 통해 추가되었습니다. 부서에서 나가면 이 액세스 권한이 제거됩니다."
+        "via_department_tooltip": "부서를 통해 추가되었습니다. 부서에서 나가면 이 액세스 권한이 제거됩니다.",
+        "join_all": "모든 부서에 참여",
+        "joined_all_toast": "{count, plural, one {부서 #개에 참여했습니다} other {부서 #개에 참여했습니다}}"
       },
       "billing_and_plans": {
         "heading": "청구 및 플랜",

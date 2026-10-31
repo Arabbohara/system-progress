@@ -33,12 +33,20 @@ function DepartmentsSettingsPage({ params }: Route.ComponentProps) {
   const { workspaceSlug } = params;
   // states
   const [isCreating, setIsCreating] = useState(false);
+  const [isJoiningAll, setIsJoiningAll] = useState(false);
   // plane hooks
   const { t } = useTranslation();
   // store hooks
   const { workspaceUserInfo, allowPermissions } = useUserPermissions();
   const { currentWorkspace } = useWorkspace();
-  const { workspaceDepartments, fetchDepartments, fetchDepartmentMembers, createDepartment } = useDepartment();
+  const {
+    workspaceDepartments,
+    fetchDepartments,
+    fetchDepartmentMembers,
+    createDepartment,
+    getCurrentUserDepartmentMember,
+    joinDepartments,
+  } = useDepartment();
   // derived values
   const isAdmin = allowPermissions([EUserPermissions.ADMIN], EUserPermissionsLevel.WORKSPACE);
   const canEdit = allowPermissions([EUserPermissions.ADMIN, EUserPermissions.MEMBER], EUserPermissionsLevel.WORKSPACE);
@@ -46,6 +54,8 @@ function DepartmentsSettingsPage({ params }: Route.ComponentProps) {
     [EUserPermissions.ADMIN, EUserPermissions.MEMBER, EUserPermissions.GUEST],
     EUserPermissionsLevel.WORKSPACE
   );
+  const unjoinedDepartmentCount =
+    workspaceDepartments?.filter((department) => !getCurrentUserDepartmentMember(department.id)).length ?? 0;
   const pageTitle = currentWorkspace?.name
     ? `${currentWorkspace.name} - ${t("workspace_settings.settings.departments.title")}`
     : undefined;
@@ -75,6 +85,26 @@ function DepartmentsSettingsPage({ params }: Route.ComponentProps) {
     }
   };
 
+  const handleJoinAll = async () => {
+    setIsJoiningAll(true);
+    try {
+      const joined = await joinDepartments(workspaceSlug);
+      setToast({
+        type: TOAST_TYPE.SUCCESS,
+        title: t("success"),
+        message: t("workspace_settings.settings.departments.joined_all_toast", { count: joined.length }),
+      });
+    } catch (error) {
+      setToast({
+        type: TOAST_TYPE.ERROR,
+        title: t("error"),
+        message: (error as { error?: string } | undefined)?.error ?? t("something_went_wrong_please_try_again"),
+      });
+    } finally {
+      setIsJoiningAll(false);
+    }
+  };
+
   if (workspaceUserInfo && !canView) {
     return <NotAuthorizedView section="settings" className="h-auto" />;
   }
@@ -94,9 +124,16 @@ function DepartmentsSettingsPage({ params }: Route.ComponentProps) {
           control={
             canEdit &&
             !isCreating && (
-              <Button variant="primary" size="lg" onClick={() => setIsCreating(true)}>
-                {t("workspace_settings.settings.departments.add_department")}
-              </Button>
+              <div className="flex items-center gap-2">
+                {unjoinedDepartmentCount > 0 && (
+                  <Button variant="secondary" size="lg" onClick={handleJoinAll} loading={isJoiningAll}>
+                    {t("workspace_settings.settings.departments.join_all")}
+                  </Button>
+                )}
+                <Button variant="primary" size="lg" onClick={() => setIsCreating(true)}>
+                  {t("workspace_settings.settings.departments.add_department")}
+                </Button>
+              </div>
             )
           }
         />

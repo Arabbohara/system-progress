@@ -21,6 +21,7 @@ from plane.app.views import (
     DepartmentViewSet,
     DepartmentMemberViewSet,
     DepartmentJoinEndpoint,
+    DepartmentBulkJoinEndpoint,
 )
 
 
@@ -76,6 +77,11 @@ urlpatterns = [
         "workspaces/<str:slug>/departments/<uuid:department_id>/members/<uuid:pk>/",
         DepartmentMemberViewSet.as_view({"patch": "partial_update", "delete": "destroy"}),
         name="department-members",
+    ),
+    path(
+        "workspaces/<str:slug>/departments/join/",
+        DepartmentBulkJoinEndpoint.as_view(),
+        name="department-bulk-join",
     ),
     path(
         "workspaces/<str:slug>/departments/<uuid:department_id>/join/",

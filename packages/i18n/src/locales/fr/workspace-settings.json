@@ -98,7 +98,9 @@
         "access_public": "Projets publics uniquement",
         "self_join_hint": "Rejoindre vous-même un département donne accès à ses projets publics. Un administrateur peut accorder l’accès aux projets privés.",
         "via_department": "via {name}",
-        "via_department_tooltip": "Ajouté via un département. Quitter le département retire cet accès."
+        "via_department_tooltip": "Ajouté via un département. Quitter le département retire cet accès.",
+        "join_all": "Rejoindre tous les départements",
+        "joined_all_toast": "{count, plural, one {# département rejoint} many {# départements rejoints} other {# départements rejoints}}"
       },
       "billing_and_plans": {
         "heading": "Facturation & Plans",

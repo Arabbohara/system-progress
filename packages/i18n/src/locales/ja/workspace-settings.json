@@ -98,7 +98,9 @@
         "access_public": "公開プロジェクトのみ",
         "self_join_hint": "自分で部署に参加すると、その部署の公開プロジェクトにアクセスできます。非公開プロジェクトへのアクセスは管理者が付与できます。",
         "via_department": "{name}経由",
-        "via_department_tooltip": "部署を通じて追加されました。部署から退出すると、このアクセスは削除されます。"
+        "via_department_tooltip": "部署を通じて追加されました。部署から退出すると、このアクセスは削除されます。",
+        "join_all": "すべての部署に参加",
+        "joined_all_toast": "{count, plural, one {#件の部署に参加しました} other {#件の部署に参加しました}}"
       },
       "billing_and_plans": {
         "heading": "請求とプラン",

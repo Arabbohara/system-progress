@@ -98,7 +98,9 @@
         "access_public": "Public projects only",
         "self_join_hint": "Joining a department yourself gives access to its public projects. An admin can grant access to private projects.",
         "via_department": "via {name}",
-        "via_department_tooltip": "Added through a department. Leaving the department removes this access."
+        "via_department_tooltip": "Added through a department. Leaving the department removes this access.",
+        "join_all": "Join all departments",
+        "joined_all_toast": "{count, plural, one {Joined # department} other {Joined # departments}}"
       },
       "billing_and_plans": {
         "heading": "Billing & Plans",

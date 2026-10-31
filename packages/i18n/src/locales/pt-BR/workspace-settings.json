@@ -98,7 +98,9 @@
         "access_public": "Somente projetos públicos",
         "self_join_hint": "Ao entrar em um departamento por conta própria, você obtém acesso aos projetos públicos dele. Um administrador pode conceder acesso aos projetos privados.",
         "via_department": "via {name}",
-        "via_department_tooltip": "Adicionado por meio de um departamento. Sair do departamento remove este acesso."
+        "via_department_tooltip": "Adicionado por meio de um departamento. Sair do departamento remove este acesso.",
+        "join_all": "Entrar em todos os departamentos",
+        "joined_all_toast": "{count, plural, one {Você entrou em # departamento} many {Você entrou em # departamentos} other {Você entrou em # departamentos}}"
       },
       "billing_and_plans": {
         "heading": "Faturamento e planos",

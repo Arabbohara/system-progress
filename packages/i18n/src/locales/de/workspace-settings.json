@@ -98,7 +98,9 @@
         "access_public": "Nur öffentliche Projekte",
         "self_join_hint": "Wenn Sie einer Abteilung selbst beitreten, erhalten Sie Zugriff auf deren öffentliche Projekte. Ein Admin kann Zugriff auf private Projekte gewähren.",
         "via_department": "über {name}",
-        "via_department_tooltip": "Über eine Abteilung hinzugefügt. Beim Verlassen der Abteilung wird dieser Zugriff entfernt."
+        "via_department_tooltip": "Über eine Abteilung hinzugefügt. Beim Verlassen der Abteilung wird dieser Zugriff entfernt.",
+        "join_all": "Allen Abteilungen beitreten",
+        "joined_all_toast": "{count, plural, one {# Abteilung beigetreten} other {# Abteilungen beigetreten}}"
       },
       "billing_and_plans": {
         "heading": "Abrechnung und Pläne",

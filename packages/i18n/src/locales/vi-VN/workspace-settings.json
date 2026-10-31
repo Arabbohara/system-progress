@@ -98,7 +98,9 @@
         "access_public": "Chỉ dự án công khai",
         "self_join_hint": "Tự tham gia phòng ban sẽ cho bạn quyền truy cập vào các dự án công khai của phòng ban đó. Quản trị viên có thể cấp quyền truy cập vào các dự án riêng tư.",
         "via_department": "qua {name}",
-        "via_department_tooltip": "Được thêm qua phòng ban. Rời khỏi phòng ban sẽ xóa quyền truy cập này."
+        "via_department_tooltip": "Được thêm qua phòng ban. Rời khỏi phòng ban sẽ xóa quyền truy cập này.",
+        "join_all": "Tham gia tất cả phòng ban",
+        "joined_all_toast": "{count, plural, one {Đã tham gia # phòng ban} other {Đã tham gia # phòng ban}}"
       },
       "billing_and_plans": {
         "heading": "Thanh toán và Kế hoạch",

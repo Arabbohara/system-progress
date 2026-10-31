@@ -98,7 +98,9 @@
         "access_public": "Pouze veřejné projekty",
         "self_join_hint": "Samostatné připojení k oddělení poskytuje přístup k jeho veřejným projektům. Přístup k soukromým projektům může udělit správce.",
         "via_department": "přes {name}",
-        "via_department_tooltip": "Přidáno přes oddělení. Opuštěním oddělení se tento přístup odebere."
+        "via_department_tooltip": "Přidáno přes oddělení. Opuštěním oddělení se tento přístup odebere.",
+        "join_all": "Připojit se ke všem oddělením",
+        "joined_all_toast": "{count, plural, one {Připojeno k # oddělení} few {Připojeno k # oddělením} many {Připojeno k # oddělení} other {Připojeno k # oddělením}}"
       },
       "billing_and_plans": {
         "heading": "Fakturace a plány",

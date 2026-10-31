@@ -98,7 +98,9 @@
         "access_public": "Doar proiecte publice",
         "self_join_hint": "Alăturarea pe cont propriu la un departament oferă acces la proiectele sale publice. Un administrator poate acorda acces la proiectele private.",
         "via_department": "prin {name}",
-        "via_department_tooltip": "Adăugat printr-un departament. Părăsirea departamentului elimină acest acces."
+        "via_department_tooltip": "Adăugat printr-un departament. Părăsirea departamentului elimină acest acces.",
+        "join_all": "Alăturați-vă tuturor departamentelor",
+        "joined_all_toast": "{count, plural, one {V-ați alăturat la # departament} few {V-ați alăturat la # departamente} other {V-ați alăturat la # de departamente}}"
       },
       "billing_and_plans": {
         "heading": "Facturare și abonamente",

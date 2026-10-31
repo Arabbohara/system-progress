@@ -98,7 +98,9 @@
         "access_public": "Tylko projekty publiczne",
         "self_join_hint": "Samodzielne dołączenie do działu daje dostęp do jego projektów publicznych. Administrator może przyznać dostęp do projektów prywatnych.",
         "via_department": "przez {name}",
-        "via_department_tooltip": "Dodano przez dział. Opuszczenie działu usuwa ten dostęp."
+        "via_department_tooltip": "Dodano przez dział. Opuszczenie działu usuwa ten dostęp.",
+        "join_all": "Dołącz do wszystkich działów",
+        "joined_all_toast": "{count, plural, one {Dołączono do # działu} few {Dołączono do # działów} many {Dołączono do # działów} other {Dołączono do # działu}}"
       },
       "billing_and_plans": {
         "heading": "Rozliczenia i plany",

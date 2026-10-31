@@ -98,7 +98,9 @@
         "access_public": "Solo progetti pubblici",
         "self_join_hint": "Unendosi autonomamente a un reparto si ottiene l'accesso ai suoi progetti pubblici. Un amministratore può concedere l'accesso ai progetti privati.",
         "via_department": "tramite {name}",
-        "via_department_tooltip": "Aggiunto tramite un reparto. Lasciare il reparto rimuove questo accesso."
+        "via_department_tooltip": "Aggiunto tramite un reparto. Lasciare il reparto rimuove questo accesso.",
+        "join_all": "Unirsi a tutti i reparti",
+        "joined_all_toast": "{count, plural, one {Adesione a # reparto completata} many {Adesione a # reparti completata} other {Adesione a # reparti completata}}"
       },
       "billing_and_plans": {
         "heading": "Fatturazione e piani",

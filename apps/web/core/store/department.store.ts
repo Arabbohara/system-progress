@@ -41,6 +41,8 @@ export interface IDepartmentStore {
   ) => Promise<TDepartmentMember>;
   removeDepartmentMember: (workspaceSlug: string, departmentId: string, departmentMemberId: string) => Promise<void>;
   joinDepartment: (workspaceSlug: string, departmentId: string) => Promise<TDepartmentMember>;
+  /** Join every department the current user is not in yet, or only `departmentIds` */
+  joinDepartments: (workspaceSlug: string, departmentIds?: string[]) => Promise<TDepartmentMember[]>;
   leaveDepartment: (workspaceSlug: string, departmentId: string) => Promise<void>;
 }
 
@@ -66,6 +68,7 @@ export class DepartmentStore implements IDepartmentStore {
       updateDepartmentMember: action,
       removeDepartmentMember: action,
       joinDepartment: action,
+      joinDepartments: action,
       leaveDepartment: action,
     });
 
@@ -221,6 +224,17 @@ export class DepartmentStore implements IDepartmentStore {
       set(this.departmentMemberMap, [response.id], response);
     });
     await this.refreshCurrentUserProjects(workspaceSlug);
+    return response;
+  };
+
+  joinDepartments = async (workspaceSlug: string, departmentIds?: string[]) => {
+    const response = await this.departmentService.joinDepartments(workspaceSlug, departmentIds);
+    runInAction(() => {
+      response.forEach((departmentMember) => {
+        set(this.departmentMemberMap, [departmentMember.id], departmentMember);
+      });
+    });
+    if (response.length > 0) await this.refreshCurrentUserProjects(workspaceSlug);
     return response;
   };
 

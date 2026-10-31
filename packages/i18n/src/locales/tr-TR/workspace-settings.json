@@ -98,7 +98,9 @@
         "access_public": "Yalnızca herkese açık projeler",
         "self_join_hint": "Bir departmana kendiniz katılmanız, departmanın herkese açık projelerine erişim sağlar. Özel projelere erişimi bir yönetici verebilir.",
         "via_department": "{name} aracılığıyla",
-        "via_department_tooltip": "Bir departman aracılığıyla eklendi. Departmandan ayrılmak bu erişimi kaldırır."
+        "via_department_tooltip": "Bir departman aracılığıyla eklendi. Departmandan ayrılmak bu erişimi kaldırır.",
+        "join_all": "Tüm departmanlara katıl",
+        "joined_all_toast": "{count, plural, one {# departmana katıldınız} other {# departmana katıldınız}}"
       },
       "billing_and_plans": {
         "heading": "Faturalandırma ve Planlar",

@@ -98,7 +98,9 @@
         "access_public": "Hanya proyek publik",
         "self_join_hint": "Bergabung sendiri ke departemen memberi akses ke proyek publiknya. Admin dapat memberikan akses ke proyek privat.",
         "via_department": "melalui {name}",
-        "via_department_tooltip": "Ditambahkan melalui departemen. Keluar dari departemen akan menghapus akses ini."
+        "via_department_tooltip": "Ditambahkan melalui departemen. Keluar dari departemen akan menghapus akses ini.",
+        "join_all": "Bergabung ke semua departemen",
+        "joined_all_toast": "{count, plural, one {Bergabung ke # departemen} other {Bergabung ke # departemen}}"
       },
       "billing_and_plans": {
         "heading": "Penagihan & Rencana",
