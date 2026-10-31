@@ -374,5 +374,75 @@
         }
       }
     }
+  },
+  "team_progress": {
+    "title": "Progres tim",
+    "print": "Cetak",
+    "empty": "Tidak ada yang dapat ditampilkan untuk filter ini.",
+    "period": {
+      "last_days": "{count} hari terakhir",
+      "start": "Tanggal mulai",
+      "end": "Tanggal akhir"
+    },
+    "summary": {
+      "members": "Anggota",
+      "active_projects": "Proyek aktif",
+      "started": "Sedang berlangsung",
+      "completed": "Selesai dalam periode",
+      "created": "Dibuat dalam periode",
+      "overdue": "Terlambat"
+    },
+    "stats": {
+      "started": "Sedang berlangsung",
+      "open": "Ditugaskan",
+      "completed": "Selesai",
+      "overdue": "Terlambat"
+    },
+    "view": {
+      "members": "Per anggota",
+      "projects": "Per proyek"
+    },
+    "filters": {
+      "all_departments": "Semua departemen",
+      "search": "Cari berdasarkan nama"
+    },
+    "tile": {
+      "started_of_open": "{started} / {open}",
+      "more_projects": "{count, plural, one {+# proyek lainnya} other {+# proyek lainnya}}",
+      "no_work": "Tidak ada item kerja yang ditugaskan",
+      "created": "{count} dibuat",
+      "no_assignees": "Tidak ada penugas"
+    },
+    "slack": {
+      "settings": "Pengaturan Slack",
+      "send_now": "Kirim ke Slack",
+      "sent_toast": "Laporan telah diposting ke Slack.",
+      "saved_toast": "Pengaturan laporan Slack disimpan.",
+      "title": "Laporan progres Slack",
+      "description": "Posting ringkasan secara terjadwal ke saluran Slack tentang siapa mengerjakan apa dan sejauh mana kemajuan setiap proyek.",
+      "webhook_url": "URL webhook masuk",
+      "webhook_replace_placeholder": "Tempel URL baru untuk mengganti URL saat ini",
+      "webhook_help": "Di Slack, tambahkan aplikasi \"Incoming Webhooks\" ke saluran, lalu tempel URL yang diberikan di sini.",
+      "remove_webhook": "Hapus",
+      "schedule": "Pengiriman",
+      "schedule_help": "Waktu menggunakan zona waktu ruang kerja. Laporan mencakup 1 hari, 7 hari, atau 30 hari terakhir.",
+      "monthly_day": "pada tanggal 1",
+      "enabled": "Kirim secara otomatis",
+      "last_sent": "Terakhir dikirim: {date}",
+      "frequency": {
+        "daily": "Harian",
+        "weekly": "Mingguan",
+        "monthly": "Bulanan"
+      },
+      "weekdays": {
+        "0": "Senin",
+        "1": "Selasa",
+        "2": "Rabu",
+        "3": "Kamis",
+        "4": "Jumat",
+        "5": "Sabtu",
+        "6": "Minggu"
+      }
+    }
   }
 }

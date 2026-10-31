@@ -374,5 +374,75 @@
         }
       }
     }
+  },
+  "team_progress": {
+    "title": "Ekip ilerlemesi",
+    "print": "Yazdır",
+    "empty": "Bu filtre için gösterilecek bir şey yok.",
+    "period": {
+      "last_days": "Son {count} gün",
+      "start": "Başlangıç tarihi",
+      "end": "Bitiş tarihi"
+    },
+    "summary": {
+      "members": "Üyeler",
+      "active_projects": "Aktif projeler",
+      "started": "Devam ediyor",
+      "completed": "Dönem içinde tamamlanan",
+      "created": "Dönem içinde oluşturulan",
+      "overdue": "Gecikmiş"
+    },
+    "stats": {
+      "started": "Devam ediyor",
+      "open": "Atanmış",
+      "completed": "Tamamlandı",
+      "overdue": "Gecikmiş"
+    },
+    "view": {
+      "members": "Üyeye göre",
+      "projects": "Projeye göre"
+    },
+    "filters": {
+      "all_departments": "Tüm departmanlar",
+      "search": "Ada göre ara"
+    },
+    "tile": {
+      "started_of_open": "{started} / {open}",
+      "more_projects": "{count, plural, one {+# proje daha} other {+# proje daha}}",
+      "no_work": "Atanmış iş öğesi yok",
+      "created": "{count} oluşturuldu",
+      "no_assignees": "Atanan yok"
+    },
+    "slack": {
+      "settings": "Slack ayarları",
+      "send_now": "Slack'e gönder",
+      "sent_toast": "Rapor Slack'te yayınlandı.",
+      "saved_toast": "Slack rapor ayarları kaydedildi.",
+      "title": "Slack ilerleme raporu",
+      "description": "Kimin ne üzerinde çalıştığını ve her projenin ne kadar ilerlediğini özetleyen bir raporu düzenli olarak bir Slack kanalında yayınlayın.",
+      "webhook_url": "Gelen webhook URL'si",
+      "webhook_replace_placeholder": "Mevcut URL'yi değiştirmek için yeni bir URL yapıştırın",
+      "webhook_help": "Slack'te bir kanala \"Incoming Webhooks\" uygulamasını ekleyin ve size verilen URL'yi buraya yapıştırın.",
+      "remove_webhook": "Kaldır",
+      "schedule": "Gönderim",
+      "schedule_help": "Saatler çalışma alanının saat dilimine göredir. Rapor son 1 günü, 7 günü veya 30 günü kapsar.",
+      "monthly_day": "ayın 1'inde",
+      "enabled": "Otomatik olarak gönder",
+      "last_sent": "Son gönderim: {date}",
+      "frequency": {
+        "daily": "Günlük",
+        "weekly": "Haftalık",
+        "monthly": "Aylık"
+      },
+      "weekdays": {
+        "0": "Pazartesi",
+        "1": "Salı",
+        "2": "Çarşamba",
+        "3": "Perşembe",
+        "4": "Cuma",
+        "5": "Cumartesi",
+        "6": "Pazar"
+      }
+    }
   }
 }

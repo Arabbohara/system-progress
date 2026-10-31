@@ -81,6 +81,16 @@
       "trial_ends_in_days": "トライアル終了まであと{days}日",
       "start_subscription": "サブスクリプションを開始",
       "explore_business_features": "Business機能を探索"
+    },
+    "my_active_projects": {
+      "title": "進行中のマイプロジェクト",
+      "count": "{count, plural, one {#件のプロジェクト} other {#件のプロジェクト}}",
+      "started": "進行中 {count}",
+      "open": "担当 {count}",
+      "overdue": "期限切れ {count}",
+      "no_assigned": "担当の作業項目はありません",
+      "show_all": "すべて表示",
+      "show_less": "閉じる"
     }
   }
 }

@@ -374,5 +374,75 @@
         }
       }
     }
+  },
+  "team_progress": {
+    "title": "Progresso da equipe",
+    "print": "Imprimir",
+    "empty": "Nada para mostrar com este filtro.",
+    "period": {
+      "last_days": "Últimos {count} dias",
+      "start": "Data de início",
+      "end": "Data de término"
+    },
+    "summary": {
+      "members": "Membros",
+      "active_projects": "Projetos ativos",
+      "started": "Em andamento",
+      "completed": "Concluídos no período",
+      "created": "Criados no período",
+      "overdue": "Atrasados"
+    },
+    "stats": {
+      "started": "Em andamento",
+      "open": "Atribuídos",
+      "completed": "Concluídos",
+      "overdue": "Atrasados"
+    },
+    "view": {
+      "members": "Por membro",
+      "projects": "Por projeto"
+    },
+    "filters": {
+      "all_departments": "Todos os departamentos",
+      "search": "Buscar por nome"
+    },
+    "tile": {
+      "started_of_open": "{started} / {open}",
+      "more_projects": "{count, plural, one {+# outro projeto} many {+# outros projetos} other {+# outros projetos}}",
+      "no_work": "Nenhum item de trabalho atribuído",
+      "created": "{count, plural, one {# criado} many {# criados} other {# criados}}",
+      "no_assignees": "Sem responsáveis"
+    },
+    "slack": {
+      "settings": "Configurações do Slack",
+      "send_now": "Enviar para o Slack",
+      "sent_toast": "O relatório foi publicado no Slack.",
+      "saved_toast": "Configurações do relatório do Slack salvas.",
+      "title": "Relatório de progresso no Slack",
+      "description": "Publique periodicamente em um canal do Slack um resumo de quem está trabalhando em quê e do andamento de cada projeto.",
+      "webhook_url": "URL do webhook de entrada",
+      "webhook_replace_placeholder": "Cole uma nova URL para substituir a atual",
+      "webhook_help": "No Slack, adicione o app \"Incoming Webhooks\" a um canal e cole aqui a URL fornecida.",
+      "remove_webhook": "Remover",
+      "schedule": "Envio",
+      "schedule_help": "Os horários usam o fuso horário do espaço de trabalho. O relatório abrange o último dia, os últimos 7 dias ou os últimos 30 dias.",
+      "monthly_day": "no dia 1",
+      "enabled": "Enviar automaticamente",
+      "last_sent": "Último envio: {date}",
+      "frequency": {
+        "daily": "Diário",
+        "weekly": "Semanal",
+        "monthly": "Mensal"
+      },
+      "weekdays": {
+        "0": "Segunda-feira",
+        "1": "Terça-feira",
+        "2": "Quarta-feira",
+        "3": "Quinta-feira",
+        "4": "Sexta-feira",
+        "5": "Sábado",
+        "6": "Domingo"
+      }
+    }
   }
 }

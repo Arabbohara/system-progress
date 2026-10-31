@@ -72,6 +72,16 @@
       "trial_ends_in_days": "Perioada de probă se încheie în {days, plural, one {# zi} other {# zile}}",
       "start_subscription": "Începe abonamentul",
       "explore_business_features": "Explorează funcțiile Business"
+    },
+    "my_active_projects": {
+      "title": "Proiectele mele active",
+      "count": "{count, plural, one {# proiect} few {# proiecte} other {# de proiecte}}",
+      "started": "În desfășurare: {count}",
+      "open": "Atribuite: {count}",
+      "overdue": "Restante: {count}",
+      "no_assigned": "Nu aveți activități atribuite",
+      "show_all": "Arată tot",
+      "show_less": "Arată mai puțin"
     }
   }
 }

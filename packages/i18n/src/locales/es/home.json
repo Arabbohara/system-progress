@@ -72,6 +72,16 @@
       "trial_ends_in_days": "La prueba termina en {days, plural, one {# día} other {# días}}",
       "start_subscription": "Iniciar suscripción",
       "explore_business_features": "Explorar funciones Business"
+    },
+    "my_active_projects": {
+      "title": "Mis proyectos activos",
+      "count": "{count, plural, one {# proyecto} other {# proyectos}}",
+      "started": "{count} en progreso",
+      "open": "{count, plural, one {# asignado} other {# asignados}}",
+      "overdue": "{count, plural, one {# vencido} other {# vencidos}}",
+      "no_assigned": "No tiene elementos de trabajo asignados",
+      "show_all": "Mostrar todo",
+      "show_less": "Mostrar menos"
     }
   }
 }

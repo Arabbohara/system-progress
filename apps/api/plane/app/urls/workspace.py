@@ -33,6 +33,10 @@ from plane.app.views import (
     WorkspaceDraftIssueViewSet,
     QuickLinkViewSet,
     MemberUpdateViewSet,
+    TeamProgressEndpoint,
+    MyProjectProgressEndpoint,
+    SlackReportSettingEndpoint,
+    SlackReportSendEndpoint,
     UserRecentVisitViewSet,
     WorkspaceHomePreferenceViewSet,
     WorkspaceStickyViewSet,
@@ -236,6 +240,27 @@ urlpatterns = [
         "workspaces/<str:slug>/member-updates/<uuid:pk>/",
         MemberUpdateViewSet.as_view({"patch": "partial_update", "delete": "destroy"}),
         name="workspace-member-updates",
+    ),
+    # team progress and Slack report
+    path(
+        "workspaces/<str:slug>/team-progress/",
+        TeamProgressEndpoint.as_view(),
+        name="workspace-team-progress",
+    ),
+    path(
+        "workspaces/<str:slug>/my-project-progress/",
+        MyProjectProgressEndpoint.as_view(),
+        name="workspace-my-project-progress",
+    ),
+    path(
+        "workspaces/<str:slug>/slack-report/",
+        SlackReportSettingEndpoint.as_view(),
+        name="workspace-slack-report",
+    ),
+    path(
+        "workspaces/<str:slug>/slack-report/send/",
+        SlackReportSendEndpoint.as_view(),
+        name="workspace-slack-report-send",
     ),
     # Widgets
     path(

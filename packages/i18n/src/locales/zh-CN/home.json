@@ -72,6 +72,16 @@
       "trial_ends_in_days": "试用将在{days}天后结束",
       "start_subscription": "开始订阅",
       "explore_business_features": "探索Business功能"
+    },
+    "my_active_projects": {
+      "title": "我的活跃项目",
+      "count": "{count, plural, one {# 个项目} other {# 个项目}}",
+      "started": "进行中 {count}",
+      "open": "已分配 {count}",
+      "overdue": "已逾期 {count}",
+      "no_assigned": "没有分配给您的工作项",
+      "show_all": "显示全部",
+      "show_less": "显示更少"
     }
   }
 }

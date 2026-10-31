@@ -374,5 +374,75 @@
         }
       }
     }
+  },
+  "team_progress": {
+    "title": "Progreso del equipo",
+    "print": "Imprimir",
+    "empty": "No hay nada que mostrar con este filtro.",
+    "period": {
+      "last_days": "Últimos {count} días",
+      "start": "Fecha de inicio",
+      "end": "Fecha de fin"
+    },
+    "summary": {
+      "members": "Miembros",
+      "active_projects": "Proyectos activos",
+      "started": "En progreso",
+      "completed": "Completados en el período",
+      "created": "Creados en el período",
+      "overdue": "Vencidos"
+    },
+    "stats": {
+      "started": "En progreso",
+      "open": "Asignados",
+      "completed": "Completados",
+      "overdue": "Vencidos"
+    },
+    "view": {
+      "members": "Por miembro",
+      "projects": "Por proyecto"
+    },
+    "filters": {
+      "all_departments": "Todos los departamentos",
+      "search": "Buscar por nombre"
+    },
+    "tile": {
+      "started_of_open": "{started} / {open}",
+      "more_projects": "{count, plural, one {+# proyecto más} other {+# proyectos más}}",
+      "no_work": "Sin elementos de trabajo asignados",
+      "created": "{count, plural, one {# creado} other {# creados}}",
+      "no_assignees": "Sin asignados"
+    },
+    "slack": {
+      "settings": "Configuración de Slack",
+      "send_now": "Enviar a Slack",
+      "sent_toast": "El informe se publicó en Slack.",
+      "saved_toast": "Se guardó la configuración del informe de Slack.",
+      "title": "Informe de progreso en Slack",
+      "description": "Publique periódicamente en un canal de Slack un resumen de quién trabaja en qué y cuánto ha avanzado cada proyecto.",
+      "webhook_url": "URL del webhook entrante",
+      "webhook_replace_placeholder": "Pegue una nueva URL para reemplazar la actual",
+      "webhook_help": "En Slack, agregue la aplicación «Incoming Webhooks» a un canal y pegue aquí la URL que le proporcione.",
+      "remove_webhook": "Eliminar",
+      "schedule": "Envío",
+      "schedule_help": "Las horas usan la zona horaria del espacio de trabajo. El informe abarca el último día, los últimos 7 días o los últimos 30 días.",
+      "monthly_day": "el día 1",
+      "enabled": "Enviar automáticamente",
+      "last_sent": "Último envío: {date}",
+      "frequency": {
+        "daily": "Diario",
+        "weekly": "Semanal",
+        "monthly": "Mensual"
+      },
+      "weekdays": {
+        "0": "Lunes",
+        "1": "Martes",
+        "2": "Miércoles",
+        "3": "Jueves",
+        "4": "Viernes",
+        "5": "Sábado",
+        "6": "Domingo"
+      }
+    }
   }
 }

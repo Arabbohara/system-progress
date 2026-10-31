@@ -17,6 +17,7 @@ import { TourRoot } from "@/components/onboarding/tour/root";
 // local imports
 import { DashboardWidgets } from "./home-dashboard-widgets";
 import { HomeMemberUpdates } from "./member-updates";
+import { HomeMyActiveProjects } from "./my-active-projects";
 import { HomeProjectProgressSummary } from "./project-progress-summary";
 import { UserGreetingsView } from "./user-greetings";
 import { HomePeekOverviewsRoot } from "../issues/peek-overview/peek-overviews";
@@ -59,6 +60,7 @@ export const WorkspaceHomeView = observer(function WorkspaceHomeView() {
         <ContentWrapper className="mx-auto scrollbar-hide gap-6 bg-surface-1 px-page-x">
           <div className="mx-auto w-full max-w-[800px]">
             {currentUser && <UserGreetingsView user={currentUser} />}
+            <HomeMyActiveProjects />
             <HomeProjectProgressSummary />
             <HomeMemberUpdates />
             <DashboardWidgets />

@@ -374,5 +374,75 @@
         }
       }
     }
+  },
+  "team_progress": {
+    "title": "Progression de l’équipe",
+    "print": "Imprimer",
+    "empty": "Rien à afficher pour ce filtre.",
+    "period": {
+      "last_days": "{count, plural, one {# dernier jour} many {# derniers jours} other {# derniers jours}}",
+      "start": "Date de début",
+      "end": "Date de fin"
+    },
+    "summary": {
+      "members": "Membres",
+      "active_projects": "Projets actifs",
+      "started": "En cours",
+      "completed": "Terminés sur la période",
+      "created": "Créés sur la période",
+      "overdue": "En retard"
+    },
+    "stats": {
+      "started": "En cours",
+      "open": "Assignés",
+      "completed": "Terminés",
+      "overdue": "En retard"
+    },
+    "view": {
+      "members": "Par membre",
+      "projects": "Par projet"
+    },
+    "filters": {
+      "all_departments": "Tous les départements",
+      "search": "Rechercher par nom"
+    },
+    "tile": {
+      "started_of_open": "{started} / {open}",
+      "more_projects": "{count, plural, one {+# autre projet} many {+# autres projets} other {+# autres projets}}",
+      "no_work": "Aucun élément de travail assigné",
+      "created": "{count, plural, one {# créé} many {# créés} other {# créés}}",
+      "no_assignees": "Aucun acteur"
+    },
+    "slack": {
+      "settings": "Paramètres Slack",
+      "send_now": "Envoyer vers Slack",
+      "sent_toast": "Le rapport a été publié sur Slack.",
+      "saved_toast": "Paramètres du rapport Slack enregistrés.",
+      "title": "Rapport d’avancement Slack",
+      "description": "Publiez à intervalles réguliers, dans un canal Slack, un récapitulatif indiquant qui travaille sur quoi et où en est chaque projet.",
+      "webhook_url": "URL du webhook entrant",
+      "webhook_replace_placeholder": "Collez une nouvelle URL pour remplacer l’URL actuelle",
+      "webhook_help": "Dans Slack, ajoutez l’application « Incoming Webhooks » à un canal, puis collez ici l’URL fournie.",
+      "remove_webhook": "Supprimer",
+      "schedule": "Envoi",
+      "schedule_help": "Les heures suivent le fuseau horaire de l’espace de travail. Le rapport couvre le dernier jour, les 7 derniers jours ou les 30 derniers jours.",
+      "monthly_day": "le 1er du mois",
+      "enabled": "Envoyer automatiquement",
+      "last_sent": "Dernier envoi : {date}",
+      "frequency": {
+        "daily": "Quotidien",
+        "weekly": "Hebdomadaire",
+        "monthly": "Mensuel"
+      },
+      "weekdays": {
+        "0": "Lundi",
+        "1": "Mardi",
+        "2": "Mercredi",
+        "3": "Jeudi",
+        "4": "Vendredi",
+        "5": "Samedi",
+        "6": "Dimanche"
+      }
+    }
   }
 }

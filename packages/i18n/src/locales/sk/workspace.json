@@ -374,5 +374,75 @@
         }
       }
     }
+  },
+  "team_progress": {
+    "title": "Postup tímu",
+    "print": "Tlač",
+    "empty": "Pre tento filter nie je čo zobraziť.",
+    "period": {
+      "last_days": "{count, plural, one {Posledný # deň} few {Posledné # dni} many {Posledných # dňa} other {Posledných # dní}}",
+      "start": "Dátum začiatku",
+      "end": "Dátum ukončenia"
+    },
+    "summary": {
+      "members": "Členovia",
+      "active_projects": "Aktívne projekty",
+      "started": "Prebieha",
+      "completed": "Dokončené v období",
+      "created": "Vytvorené v období",
+      "overdue": "Po termíne"
+    },
+    "stats": {
+      "started": "Prebieha",
+      "open": "Priradené",
+      "completed": "Dokončené",
+      "overdue": "Po termíne"
+    },
+    "view": {
+      "members": "Podľa člena",
+      "projects": "Podľa projektu"
+    },
+    "filters": {
+      "all_departments": "Všetky oddelenia",
+      "search": "Hľadať podľa mena"
+    },
+    "tile": {
+      "started_of_open": "{started} / {open}",
+      "more_projects": "{count, plural, one {+# ďalší projekt} few {+# ďalšie projekty} many {+# ďalšieho projektu} other {+# ďalších projektov}}",
+      "no_work": "Žiadne priradené pracovné položky",
+      "created": "Vytvorené: {count}",
+      "no_assignees": "Žiadni priradení"
+    },
+    "slack": {
+      "settings": "Nastavenia Slack",
+      "send_now": "Odoslať do kanála Slack",
+      "sent_toast": "Prehľad bol zverejnený v kanáli Slack.",
+      "saved_toast": "Nastavenia prehľadu pre Slack boli uložené.",
+      "title": "Prehľad postupu pre Slack",
+      "description": "Pravidelne zverejňujte v kanáli Slack súhrn toho, kto na čom pracuje a ako ďaleko je každý projekt.",
+      "webhook_url": "URL prichádzajúceho webhooku",
+      "webhook_replace_placeholder": "Vložte novú URL, ktorá nahradí súčasnú",
+      "webhook_help": "V aplikácii Slack pridajte do kanála aplikáciu „Incoming Webhooks“ a vložte sem URL, ktorú vám poskytne.",
+      "remove_webhook": "Odstrániť",
+      "schedule": "Odosielanie",
+      "schedule_help": "Časy sa riadia časovým pásmom pracovného priestoru. Prehľad zahŕňa posledný deň, 7 alebo 30 dní.",
+      "monthly_day": "1. deň v mesiaci",
+      "enabled": "Odosielať automaticky",
+      "last_sent": "Naposledy odoslané: {date}",
+      "frequency": {
+        "daily": "Denne",
+        "weekly": "Týždenne",
+        "monthly": "Mesačne"
+      },
+      "weekdays": {
+        "0": "Pondelok",
+        "1": "Utorok",
+        "2": "Streda",
+        "3": "Štvrtok",
+        "4": "Piatok",
+        "5": "Sobota",
+        "6": "Nedeľa"
+      }
+    }
   }
 }

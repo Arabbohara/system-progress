@@ -72,6 +72,16 @@
       "trial_ends_in_days": "Uji coba berakhir dalam {days} hari",
       "start_subscription": "Mulai berlangganan",
       "explore_business_features": "Jelajahi fitur Business"
+    },
+    "my_active_projects": {
+      "title": "Proyek aktif saya",
+      "count": "{count, plural, one {# proyek} other {# proyek}}",
+      "started": "{count} sedang berlangsung",
+      "open": "{count} ditugaskan",
+      "overdue": "{count} terlambat",
+      "no_assigned": "Tidak ada item kerja yang ditugaskan kepada Anda",
+      "show_all": "Tampilkan semua",
+      "show_less": "Tampilkan lebih sedikit"
     }
   }
 }

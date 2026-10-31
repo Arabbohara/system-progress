@@ -72,6 +72,16 @@
       "trial_ends_in_days": "체험판 종료까지 {days}일 남음",
       "start_subscription": "구독 시작",
       "explore_business_features": "Business 기능 살펴보기"
+    },
+    "my_active_projects": {
+      "title": "내 활성 프로젝트",
+      "count": "{count, plural, one {프로젝트 #개} other {프로젝트 #개}}",
+      "started": "진행 중 {count}",
+      "open": "할당됨 {count}",
+      "overdue": "기한 초과 {count}",
+      "no_assigned": "나에게 할당된 작업 항목이 없습니다",
+      "show_all": "모두 보기",
+      "show_less": "간략히 보기"
     }
   }
 }

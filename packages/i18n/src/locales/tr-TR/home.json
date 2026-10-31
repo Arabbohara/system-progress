@@ -72,6 +72,16 @@
       "trial_ends_in_days": "Deneme {days} gün içinde sona eriyor",
       "start_subscription": "Aboneliği başlat",
       "explore_business_features": "Business özelliklerini keşfet"
+    },
+    "my_active_projects": {
+      "title": "Aktif projelerim",
+      "count": "{count, plural, one {# proje} other {# proje}}",
+      "started": "{count} devam ediyor",
+      "open": "{count} atanmış",
+      "overdue": "{count} gecikmiş",
+      "no_assigned": "Size atanmış iş öğesi yok",
+      "show_all": "Tümünü göster",
+      "show_less": "Daha az göster"
     }
   }
 }

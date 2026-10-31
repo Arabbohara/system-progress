@@ -374,5 +374,75 @@
         }
       }
     }
+  },
+  "team_progress": {
+    "title": "Team progress",
+    "print": "Print",
+    "empty": "Nothing to show for this filter.",
+    "period": {
+      "last_days": "Last {count} days",
+      "start": "Start date",
+      "end": "End date"
+    },
+    "summary": {
+      "members": "Members",
+      "active_projects": "Active projects",
+      "started": "In progress",
+      "completed": "Completed in period",
+      "created": "Created in period",
+      "overdue": "Overdue"
+    },
+    "stats": {
+      "started": "In progress",
+      "open": "Assigned",
+      "completed": "Completed",
+      "overdue": "Overdue"
+    },
+    "view": {
+      "members": "By member",
+      "projects": "By project"
+    },
+    "filters": {
+      "all_departments": "All departments",
+      "search": "Search by name"
+    },
+    "tile": {
+      "started_of_open": "{started} / {open}",
+      "more_projects": "{count, plural, one {+# more project} other {+# more projects}}",
+      "no_work": "No assigned work items",
+      "created": "{count} created",
+      "no_assignees": "No assignees"
+    },
+    "slack": {
+      "settings": "Slack settings",
+      "send_now": "Send to Slack",
+      "sent_toast": "The report was posted to Slack.",
+      "saved_toast": "Slack report settings saved.",
+      "title": "Slack progress report",
+      "description": "Post a summary of who is working on what, and how far along each project is, to a Slack channel on a schedule.",
+      "webhook_url": "Incoming webhook URL",
+      "webhook_replace_placeholder": "Paste a new URL to replace the current one",
+      "webhook_help": "In Slack, add the Incoming Webhooks app to a channel and paste the URL it gives you.",
+      "remove_webhook": "Remove",
+      "schedule": "Send",
+      "schedule_help": "Times use the workspace timezone. The report covers the last day, 7 days or 30 days.",
+      "monthly_day": "on the 1st",
+      "enabled": "Send automatically",
+      "last_sent": "Last sent: {date}",
+      "frequency": {
+        "daily": "Daily",
+        "weekly": "Weekly",
+        "monthly": "Monthly"
+      },
+      "weekdays": {
+        "0": "Monday",
+        "1": "Tuesday",
+        "2": "Wednesday",
+        "3": "Thursday",
+        "4": "Friday",
+        "5": "Saturday",
+        "6": "Sunday"
+      }
+    }
   }
 }

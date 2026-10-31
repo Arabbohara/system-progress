@@ -4,6 +4,7 @@
  * See the LICENSE file for details.
  */
 
+import { LayoutGrid } from "lucide-react";
 import {
   AnalyticsIcon,
   ArchiveIcon,
@@ -40,5 +41,7 @@ export const getSidebarNavigationItemIcon = (key: string, className: string = ""
       return <ArchiveIcon className={cn("size-4 flex-shrink-0", className)} />;
     case "stickies":
       return <MultipleStickyIcon className={cn("size-4 flex-shrink-0", className)} />;
+    case "team_progress":
+      return <LayoutGrid className={cn("size-4 flex-shrink-0", className)} />;
   }
 };

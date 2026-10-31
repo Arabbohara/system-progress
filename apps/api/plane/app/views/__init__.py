@@ -89,6 +89,12 @@ from .workspace.module import WorkspaceModulesEndpoint
 from .workspace.cycle import WorkspaceCyclesEndpoint
 from .workspace.quick_link import QuickLinkViewSet
 from .workspace.member_update import MemberUpdateViewSet
+from .workspace.team_progress import (
+    TeamProgressEndpoint,
+    MyProjectProgressEndpoint,
+    SlackReportSettingEndpoint,
+    SlackReportSendEndpoint,
+)
 from .workspace.sticky import WorkspaceStickyViewSet
 
 from .state.base import StateViewSet, IntakeStateEndpoint

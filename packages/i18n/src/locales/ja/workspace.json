@@ -374,5 +374,75 @@
         }
       }
     }
+  },
+  "team_progress": {
+    "title": "チーム進捗",
+    "print": "印刷",
+    "empty": "この条件に該当するものはありません。",
+    "period": {
+      "last_days": "過去{count}日",
+      "start": "開始日",
+      "end": "終了日"
+    },
+    "summary": {
+      "members": "メンバー",
+      "active_projects": "稼働中のプロジェクト",
+      "started": "進行中",
+      "completed": "期間内に完了",
+      "created": "期間内に作成",
+      "overdue": "期限切れ"
+    },
+    "stats": {
+      "started": "進行中",
+      "open": "担当",
+      "completed": "完了",
+      "overdue": "期限切れ"
+    },
+    "view": {
+      "members": "メンバー別",
+      "projects": "プロジェクト別"
+    },
+    "filters": {
+      "all_departments": "すべての部署",
+      "search": "名前で検索"
+    },
+    "tile": {
+      "started_of_open": "{started} / {open}",
+      "more_projects": "{count, plural, one {ほか#件のプロジェクト} other {ほか#件のプロジェクト}}",
+      "no_work": "担当の作業項目はありません",
+      "created": "{count}件作成",
+      "no_assignees": "担当者なし"
+    },
+    "slack": {
+      "settings": "Slack設定",
+      "send_now": "Slackへ送信",
+      "sent_toast": "レポートをSlackに投稿しました。",
+      "saved_toast": "Slackレポートの設定を保存しました。",
+      "title": "Slack進捗レポート",
+      "description": "誰が何を担当し、各プロジェクトがどこまで進んでいるかのまとめを、定期的にSlackチャンネルへ投稿します。",
+      "webhook_url": "Incoming Webhook URL",
+      "webhook_replace_placeholder": "新しいURLを貼り付けると置き換わります",
+      "webhook_help": "Slackでチャンネルに「Incoming Webhooks」アプリを追加し、表示されたURLを貼り付けてください。",
+      "remove_webhook": "削除",
+      "schedule": "送信タイミング",
+      "schedule_help": "時刻はワークスペースのタイムゾーンです。レポートは直近1日・7日・30日分を集計します。",
+      "monthly_day": "毎月1日",
+      "enabled": "自動で送信する",
+      "last_sent": "最終送信: {date}",
+      "frequency": {
+        "daily": "毎日",
+        "weekly": "毎週",
+        "monthly": "毎月"
+      },
+      "weekdays": {
+        "0": "月曜日",
+        "1": "火曜日",
+        "2": "水曜日",
+        "3": "木曜日",
+        "4": "金曜日",
+        "5": "土曜日",
+        "6": "日曜日"
+      }
+    }
   }
 }

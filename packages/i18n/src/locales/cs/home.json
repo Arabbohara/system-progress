@@ -72,6 +72,16 @@
       "trial_ends_in_days": "Zkušební verze končí za {days, plural, one {# den} few {# dny} other {# dní}}",
       "start_subscription": "Zahájit předplatné",
       "explore_business_features": "Prozkoumat funkce Business"
+    },
+    "my_active_projects": {
+      "title": "Moje aktivní projekty",
+      "count": "{count, plural, one {# projekt} few {# projekty} many {# projektu} other {# projektů}}",
+      "started": "Probíhá: {count}",
+      "open": "Přiřazeno: {count}",
+      "overdue": "Po termínu: {count}",
+      "no_assigned": "Nemáte přiřazené žádné pracovní položky",
+      "show_all": "Zobrazit vše",
+      "show_less": "Zobrazit méně"
     }
   }
 }

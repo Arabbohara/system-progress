@@ -72,6 +72,16 @@
       "trial_ends_in_days": "La prova scade tra {days, plural, one {# giorno} other {# giorni}}",
       "start_subscription": "Avvia abbonamento",
       "explore_business_features": "Esplora funzionalità Business"
+    },
+    "my_active_projects": {
+      "title": "I miei progetti attivi",
+      "count": "{count, plural, one {# progetto} many {# progetti} other {# progetti}}",
+      "started": "{count} in corso",
+      "open": "{count, plural, one {# assegnato} many {# assegnati} other {# assegnati}}",
+      "overdue": "{count, plural, one {# scaduto} many {# scaduti} other {# scaduti}}",
+      "no_assigned": "Nessun elemento di lavoro assegnato a Lei",
+      "show_all": "Mostra tutto",
+      "show_less": "Mostra meno"
     }
   }
 }

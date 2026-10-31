@@ -374,5 +374,75 @@
         }
       }
     }
+  },
+  "team_progress": {
+    "title": "Teamfortschritt",
+    "print": "Drucken",
+    "empty": "Für diesen Filter gibt es nichts anzuzeigen.",
+    "period": {
+      "last_days": "Letzte {count} Tage",
+      "start": "Startdatum",
+      "end": "Enddatum"
+    },
+    "summary": {
+      "members": "Mitglieder",
+      "active_projects": "Aktive Projekte",
+      "started": "In Bearbeitung",
+      "completed": "Im Zeitraum abgeschlossen",
+      "created": "Im Zeitraum erstellt",
+      "overdue": "Überfällig"
+    },
+    "stats": {
+      "started": "In Bearbeitung",
+      "open": "Zugewiesen",
+      "completed": "Abgeschlossen",
+      "overdue": "Überfällig"
+    },
+    "view": {
+      "members": "Nach Mitglied",
+      "projects": "Nach Projekt"
+    },
+    "filters": {
+      "all_departments": "Alle Abteilungen",
+      "search": "Nach Name suchen"
+    },
+    "tile": {
+      "started_of_open": "{started} / {open}",
+      "more_projects": "{count, plural, one {+# weiteres Projekt} other {+# weitere Projekte}}",
+      "no_work": "Keine zugewiesenen Arbeitselemente",
+      "created": "{count} erstellt",
+      "no_assignees": "Keine Zugewiesenen"
+    },
+    "slack": {
+      "settings": "Slack-Einstellungen",
+      "send_now": "An Slack senden",
+      "sent_toast": "Der Bericht wurde in Slack veröffentlicht.",
+      "saved_toast": "Einstellungen für den Slack-Bericht gespeichert.",
+      "title": "Slack-Fortschrittsbericht",
+      "description": "Regelmäßig eine Übersicht in einem Slack-Kanal veröffentlichen: wer woran arbeitet und wie weit jedes Projekt fortgeschritten ist.",
+      "webhook_url": "URL des eingehenden Webhooks",
+      "webhook_replace_placeholder": "Neue URL einfügen, um die aktuelle zu ersetzen",
+      "webhook_help": "Fügen Sie in Slack die App „Incoming Webhooks“ zu einem Kanal hinzu und fügen Sie die angezeigte URL hier ein.",
+      "remove_webhook": "Entfernen",
+      "schedule": "Versand",
+      "schedule_help": "Die Uhrzeiten richten sich nach der Zeitzone des Arbeitsbereichs. Der Bericht umfasst den letzten Tag, die letzten 7 Tage oder die letzten 30 Tage.",
+      "monthly_day": "am 1. des Monats",
+      "enabled": "Automatisch senden",
+      "last_sent": "Zuletzt gesendet: {date}",
+      "frequency": {
+        "daily": "Täglich",
+        "weekly": "Wöchentlich",
+        "monthly": "Monatlich"
+      },
+      "weekdays": {
+        "0": "Montag",
+        "1": "Dienstag",
+        "2": "Mittwoch",
+        "3": "Donnerstag",
+        "4": "Freitag",
+        "5": "Samstag",
+        "6": "Sonntag"
+      }
+    }
   }
 }

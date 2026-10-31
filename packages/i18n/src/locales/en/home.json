@@ -81,6 +81,16 @@
       "trial_ends_in_days": "Trial ends in {days, plural, one {# day} other {# days}}",
       "start_subscription": "Start subscription",
       "explore_business_features": "Explore Business features"
+    },
+    "my_active_projects": {
+      "title": "My active projects",
+      "count": "{count, plural, one {# project} other {# projects}}",
+      "started": "{count} in progress",
+      "open": "{count} assigned",
+      "overdue": "{count} overdue",
+      "no_assigned": "No work items assigned to you",
+      "show_all": "Show all",
+      "show_less": "Show less"
     }
   }
 }

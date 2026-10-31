@@ -374,5 +374,75 @@
         }
       }
     }
+  },
+  "team_progress": {
+    "title": "團隊進度",
+    "print": "列印",
+    "empty": "此篩選條件下沒有可顯示的內容。",
+    "period": {
+      "last_days": "最近 {count} 天",
+      "start": "開始日期",
+      "end": "結束日期"
+    },
+    "summary": {
+      "members": "成員",
+      "active_projects": "啟用中的專案",
+      "started": "進行中",
+      "completed": "期間內完成",
+      "created": "期間內建立",
+      "overdue": "已逾期"
+    },
+    "stats": {
+      "started": "進行中",
+      "open": "已指派",
+      "completed": "已完成",
+      "overdue": "已逾期"
+    },
+    "view": {
+      "members": "依成員",
+      "projects": "依專案"
+    },
+    "filters": {
+      "all_departments": "所有部門",
+      "search": "依名稱搜尋"
+    },
+    "tile": {
+      "started_of_open": "{started} / {open}",
+      "more_projects": "{count, plural, one {還有 # 個專案} other {還有 # 個專案}}",
+      "no_work": "沒有已指派的工作事項",
+      "created": "已建立 {count} 個",
+      "no_assignees": "無指派對象"
+    },
+    "slack": {
+      "settings": "Slack 設定",
+      "send_now": "傳送到 Slack",
+      "sent_toast": "報告已發布到 Slack。",
+      "saved_toast": "Slack 報告設定已儲存。",
+      "title": "Slack 進度報告",
+      "description": "依排程將誰在處理什麼、各專案進展如何的摘要發布到 Slack 頻道。",
+      "webhook_url": "傳入 Webhook URL",
+      "webhook_replace_placeholder": "貼上新的 URL 以取代目前的 URL",
+      "webhook_help": "在 Slack 中，將「Incoming Webhooks」應用程式新增至頻道，然後貼上其提供的 URL。",
+      "remove_webhook": "移除",
+      "schedule": "傳送時間",
+      "schedule_help": "時間採用工作區時區。報告涵蓋最近 1 天、7 天或 30 天。",
+      "monthly_day": "於 1 日",
+      "enabled": "自動傳送",
+      "last_sent": "上次傳送：{date}",
+      "frequency": {
+        "daily": "每日",
+        "weekly": "每週",
+        "monthly": "每月"
+      },
+      "weekdays": {
+        "0": "星期一",
+        "1": "星期二",
+        "2": "星期三",
+        "3": "星期四",
+        "4": "星期五",
+        "5": "星期六",
+        "6": "星期日"
+      }
+    }
   }
 }

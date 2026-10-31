@@ -72,6 +72,16 @@
       "trial_ends_in_days": "試用將在{days}天後結束",
       "start_subscription": "開始訂閱",
       "explore_business_features": "探索Business功能"
+    },
+    "my_active_projects": {
+      "title": "我的啟用中專案",
+      "count": "{count, plural, one {# 個專案} other {# 個專案}}",
+      "started": "進行中 {count}",
+      "open": "已指派 {count}",
+      "overdue": "已逾期 {count}",
+      "no_assigned": "沒有指派給您的工作事項",
+      "show_all": "顯示全部",
+      "show_less": "顯示較少"
     }
   }
 }

@@ -72,6 +72,16 @@
       "trial_ends_in_days": "Okres próbny kończy się za {days, plural, one {# dzień} few {# dni} other {# dni}}",
       "start_subscription": "Rozpocznij subskrypcję",
       "explore_business_features": "Poznaj funkcje Business"
+    },
+    "my_active_projects": {
+      "title": "Moje aktywne projekty",
+      "count": "{count, plural, one {# projekt} few {# projekty} many {# projektów} other {# projektu}}",
+      "started": "W trakcie: {count}",
+      "open": "Przypisane: {count}",
+      "overdue": "Zaległe: {count}",
+      "no_assigned": "Brak przypisanych elementów pracy",
+      "show_all": "Pokaż wszystko",
+      "show_less": "Pokaż mniej"
     }
   }
 }

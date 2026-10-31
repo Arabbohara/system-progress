@@ -72,6 +72,16 @@
       "trial_ends_in_days": "Пробний період закінчується через {days, plural, one {# день} few {# дні} other {# днів}}",
       "start_subscription": "Оформити підписку",
       "explore_business_features": "Ознайомитися з функціями Business"
+    },
+    "my_active_projects": {
+      "title": "Мої активні проєкти",
+      "count": "{count, plural, one {# проєкт} few {# проєкти} many {# проєктів} other {# проєкту}}",
+      "started": "В процесі: {count}",
+      "open": "Призначено: {count}",
+      "overdue": "Прострочено: {count}",
+      "no_assigned": "Вам не призначено жодної робочої одиниці",
+      "show_all": "Показати все",
+      "show_less": "Показати менше"
     }
   }
 }

@@ -374,5 +374,75 @@
         }
       }
     }
+  },
+  "team_progress": {
+    "title": "팀 진행 상황",
+    "print": "인쇄",
+    "empty": "이 필터에 해당하는 항목이 없습니다.",
+    "period": {
+      "last_days": "최근 {count}일",
+      "start": "시작 날짜",
+      "end": "종료 날짜"
+    },
+    "summary": {
+      "members": "멤버",
+      "active_projects": "활성 프로젝트",
+      "started": "진행 중",
+      "completed": "기간 내 완료",
+      "created": "기간 내 생성",
+      "overdue": "기한 초과"
+    },
+    "stats": {
+      "started": "진행 중",
+      "open": "할당됨",
+      "completed": "완료됨",
+      "overdue": "기한 초과"
+    },
+    "view": {
+      "members": "멤버별",
+      "projects": "프로젝트별"
+    },
+    "filters": {
+      "all_departments": "모든 부서",
+      "search": "이름으로 검색"
+    },
+    "tile": {
+      "started_of_open": "{started} / {open}",
+      "more_projects": "{count, plural, one {+프로젝트 #개 더} other {+프로젝트 #개 더}}",
+      "no_work": "할당된 작업 항목이 없습니다",
+      "created": "{count}개 생성됨",
+      "no_assignees": "담당자 없음"
+    },
+    "slack": {
+      "settings": "Slack 설정",
+      "send_now": "Slack으로 보내기",
+      "sent_toast": "보고서를 Slack에 게시했습니다.",
+      "saved_toast": "Slack 보고서 설정을 저장했습니다.",
+      "title": "Slack 진행 상황 보고서",
+      "description": "누가 무엇을 담당하고 있으며 각 프로젝트가 얼마나 진행되었는지에 대한 요약을 일정에 따라 Slack 채널에 게시합니다.",
+      "webhook_url": "수신 웹훅 URL",
+      "webhook_replace_placeholder": "현재 URL을 바꾸려면 새 URL을 붙여넣으세요",
+      "webhook_help": "Slack에서 채널에 \"Incoming Webhooks\" 앱을 추가하고 제공된 URL을 붙여넣으세요.",
+      "remove_webhook": "제거",
+      "schedule": "발송 일정",
+      "schedule_help": "시간은 작업 공간의 시간대를 기준으로 합니다. 보고서는 최근 1일, 7일 또는 30일을 집계합니다.",
+      "monthly_day": "1일",
+      "enabled": "자동으로 보내기",
+      "last_sent": "마지막 발송: {date}",
+      "frequency": {
+        "daily": "매일",
+        "weekly": "매주",
+        "monthly": "매월"
+      },
+      "weekdays": {
+        "0": "월요일",
+        "1": "화요일",
+        "2": "수요일",
+        "3": "목요일",
+        "4": "금요일",
+        "5": "토요일",
+        "6": "일요일"
+      }
+    }
   }
 }

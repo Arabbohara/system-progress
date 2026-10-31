@@ -374,5 +374,75 @@
         }
       }
     }
+  },
+  "team_progress": {
+    "title": "Tiến độ nhóm",
+    "print": "In",
+    "empty": "Không có gì để hiển thị với bộ lọc này.",
+    "period": {
+      "last_days": "{count} ngày qua",
+      "start": "Ngày bắt đầu",
+      "end": "Ngày kết thúc"
+    },
+    "summary": {
+      "members": "Thành viên",
+      "active_projects": "Dự án đang hoạt động",
+      "started": "Đang tiến hành",
+      "completed": "Hoàn thành trong kỳ",
+      "created": "Tạo trong kỳ",
+      "overdue": "Quá hạn"
+    },
+    "stats": {
+      "started": "Đang tiến hành",
+      "open": "Được giao",
+      "completed": "Đã hoàn thành",
+      "overdue": "Quá hạn"
+    },
+    "view": {
+      "members": "Theo thành viên",
+      "projects": "Theo dự án"
+    },
+    "filters": {
+      "all_departments": "Tất cả phòng ban",
+      "search": "Tìm theo tên"
+    },
+    "tile": {
+      "started_of_open": "{started} / {open}",
+      "more_projects": "{count, plural, one {+# dự án khác} other {+# dự án khác}}",
+      "no_work": "Không có mục công việc được giao",
+      "created": "Đã tạo {count}",
+      "no_assignees": "Không có người phụ trách"
+    },
+    "slack": {
+      "settings": "Cài đặt Slack",
+      "send_now": "Gửi tới Slack",
+      "sent_toast": "Báo cáo đã được đăng lên Slack.",
+      "saved_toast": "Đã lưu cài đặt báo cáo Slack.",
+      "title": "Báo cáo tiến độ Slack",
+      "description": "Định kỳ đăng lên một kênh Slack bản tóm tắt ai đang làm gì và tiến độ của từng dự án.",
+      "webhook_url": "URL webhook đến",
+      "webhook_replace_placeholder": "Dán URL mới để thay thế URL hiện tại",
+      "webhook_help": "Trong Slack, hãy thêm ứng dụng \"Incoming Webhooks\" vào một kênh và dán URL được cung cấp vào đây.",
+      "remove_webhook": "Xóa",
+      "schedule": "Lịch gửi",
+      "schedule_help": "Thời gian theo múi giờ của không gian làm việc. Báo cáo bao gồm 1 ngày, 7 ngày hoặc 30 ngày gần nhất.",
+      "monthly_day": "vào ngày 1",
+      "enabled": "Tự động gửi",
+      "last_sent": "Lần gửi gần nhất: {date}",
+      "frequency": {
+        "daily": "Hàng ngày",
+        "weekly": "Hàng tuần",
+        "monthly": "Hàng tháng"
+      },
+      "weekdays": {
+        "0": "Thứ Hai",
+        "1": "Thứ Ba",
+        "2": "Thứ Tư",
+        "3": "Thứ Năm",
+        "4": "Thứ Sáu",
+        "5": "Thứ Bảy",
+        "6": "Chủ Nhật"
+      }
+    }
   }
 }

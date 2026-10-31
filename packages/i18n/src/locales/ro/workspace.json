@@ -374,5 +374,75 @@
         }
       }
     }
+  },
+  "team_progress": {
+    "title": "Progresul echipei",
+    "print": "Tipărire",
+    "empty": "Nimic de afișat pentru acest filtru.",
+    "period": {
+      "last_days": "{count, plural, one {Ultima # zi} few {Ultimele # zile} other {Ultimele # de zile}}",
+      "start": "Data de început",
+      "end": "Data de sfârșit"
+    },
+    "summary": {
+      "members": "Membri",
+      "active_projects": "Proiecte active",
+      "started": "În desfășurare",
+      "completed": "Finalizate în perioadă",
+      "created": "Create în perioadă",
+      "overdue": "Restante"
+    },
+    "stats": {
+      "started": "În desfășurare",
+      "open": "Atribuite",
+      "completed": "Finalizate",
+      "overdue": "Restante"
+    },
+    "view": {
+      "members": "După membru",
+      "projects": "După proiect"
+    },
+    "filters": {
+      "all_departments": "Toate departamentele",
+      "search": "Căutare după nume"
+    },
+    "tile": {
+      "started_of_open": "{started} / {open}",
+      "more_projects": "{count, plural, one {+# proiect în plus} few {+# proiecte în plus} other {+# de proiecte în plus}}",
+      "no_work": "Nicio activitate atribuită",
+      "created": "Create: {count}",
+      "no_assignees": "Fără responsabili"
+    },
+    "slack": {
+      "settings": "Setări Slack",
+      "send_now": "Trimite în Slack",
+      "sent_toast": "Raportul a fost publicat în Slack.",
+      "saved_toast": "Setările raportului Slack au fost salvate.",
+      "title": "Raport de progres Slack",
+      "description": "Publicați periodic într-un canal Slack un rezumat cu cine la ce lucrează și cât de avansat este fiecare proiect.",
+      "webhook_url": "URL webhook de intrare",
+      "webhook_replace_placeholder": "Lipiți un URL nou pentru a-l înlocui pe cel actual",
+      "webhook_help": "În Slack, adăugați aplicația „Incoming Webhooks” la un canal și lipiți aici URL-ul furnizat.",
+      "remove_webhook": "Elimină",
+      "schedule": "Trimitere",
+      "schedule_help": "Orele folosesc fusul orar al spațiului de lucru. Raportul acoperă ultima zi, ultimele 7 zile sau ultimele 30 de zile.",
+      "monthly_day": "pe data de 1",
+      "enabled": "Trimite automat",
+      "last_sent": "Ultima trimitere: {date}",
+      "frequency": {
+        "daily": "Zilnic",
+        "weekly": "Săptămânal",
+        "monthly": "Lunar"
+      },
+      "weekdays": {
+        "0": "Luni",
+        "1": "Marți",
+        "2": "Miercuri",
+        "3": "Joi",
+        "4": "Vineri",
+        "5": "Sâmbătă",
+        "6": "Duminică"
+      }
+    }
   }
 }

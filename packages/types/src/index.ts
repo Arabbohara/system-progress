@@ -34,6 +34,7 @@ export * from "./issues/issue-identifier";
 export * from "./issues/issue-property-values";
 export * from "./layout";
 export * from "./member-update";
+export * from "./team-progress";
 export * from "./module";
 export * from "./navigation-preferences";
 export * from "./page";

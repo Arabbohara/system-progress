@@ -72,6 +72,16 @@
       "trial_ends_in_days": "Testversion endet in {days, plural, one {# Tag} other {# Tagen}}",
       "start_subscription": "Abonnement starten",
       "explore_business_features": "Business-Funktionen entdecken"
+    },
+    "my_active_projects": {
+      "title": "Meine aktiven Projekte",
+      "count": "{count, plural, one {# Projekt} other {# Projekte}}",
+      "started": "{count} in Bearbeitung",
+      "open": "{count} zugewiesen",
+      "overdue": "{count} überfällig",
+      "no_assigned": "Ihnen sind keine Arbeitselemente zugewiesen",
+      "show_all": "Alle anzeigen",
+      "show_less": "Weniger anzeigen"
     }
   }
 }

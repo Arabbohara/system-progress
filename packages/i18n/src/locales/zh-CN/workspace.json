@@ -374,5 +374,75 @@
         }
       }
     }
+  },
+  "team_progress": {
+    "title": "团队进度",
+    "print": "打印",
+    "empty": "此筛选条件下没有可显示的内容。",
+    "period": {
+      "last_days": "最近 {count} 天",
+      "start": "开始日期",
+      "end": "结束日期"
+    },
+    "summary": {
+      "members": "成员",
+      "active_projects": "活跃项目",
+      "started": "进行中",
+      "completed": "期间内完成",
+      "created": "期间内创建",
+      "overdue": "已逾期"
+    },
+    "stats": {
+      "started": "进行中",
+      "open": "已分配",
+      "completed": "已完成",
+      "overdue": "已逾期"
+    },
+    "view": {
+      "members": "按成员",
+      "projects": "按项目"
+    },
+    "filters": {
+      "all_departments": "所有部门",
+      "search": "按名称搜索"
+    },
+    "tile": {
+      "started_of_open": "{started} / {open}",
+      "more_projects": "{count, plural, one {还有 # 个项目} other {还有 # 个项目}}",
+      "no_work": "没有已分配的工作项",
+      "created": "已创建 {count} 个",
+      "no_assignees": "无负责人"
+    },
+    "slack": {
+      "settings": "Slack 设置",
+      "send_now": "发送到 Slack",
+      "sent_toast": "报告已发布到 Slack。",
+      "saved_toast": "Slack 报告设置已保存。",
+      "title": "Slack 进度报告",
+      "description": "按计划将谁在做什么、各项目进展如何的摘要发布到 Slack 频道。",
+      "webhook_url": "传入 Webhook URL",
+      "webhook_replace_placeholder": "粘贴新的 URL 以替换当前 URL",
+      "webhook_help": "在 Slack 中，将“Incoming Webhooks”应用添加到频道，然后粘贴其提供的 URL。",
+      "remove_webhook": "移除",
+      "schedule": "发送时间",
+      "schedule_help": "时间采用工作区时区。报告涵盖最近 1 天、7 天或 30 天。",
+      "monthly_day": "于 1 日",
+      "enabled": "自动发送",
+      "last_sent": "上次发送：{date}",
+      "frequency": {
+        "daily": "每天",
+        "weekly": "每周",
+        "monthly": "每月"
+      },
+      "weekdays": {
+        "0": "星期一",
+        "1": "星期二",
+        "2": "星期三",
+        "3": "星期四",
+        "4": "星期五",
+        "5": "星期六",
+        "6": "星期日"
+      }
+    }
   }
 }

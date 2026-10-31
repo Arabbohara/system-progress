@@ -374,5 +374,75 @@
         }
       }
     }
+  },
+  "team_progress": {
+    "title": "Postęp zespołu",
+    "print": "Drukuj",
+    "empty": "Brak danych dla tego filtra.",
+    "period": {
+      "last_days": "{count, plural, one {Ostatni # dzień} few {Ostatnie # dni} many {Ostatnie # dni} other {Ostatnie # dnia}}",
+      "start": "Data rozpoczęcia",
+      "end": "Data zakończenia"
+    },
+    "summary": {
+      "members": "Członkowie",
+      "active_projects": "Aktywne projekty",
+      "started": "W trakcie",
+      "completed": "Zakończone w okresie",
+      "created": "Utworzone w okresie",
+      "overdue": "Zaległe"
+    },
+    "stats": {
+      "started": "W trakcie",
+      "open": "Przypisane",
+      "completed": "Zakończone",
+      "overdue": "Zaległe"
+    },
+    "view": {
+      "members": "Według członka",
+      "projects": "Według projektu"
+    },
+    "filters": {
+      "all_departments": "Wszystkie działy",
+      "search": "Szukaj po nazwie"
+    },
+    "tile": {
+      "started_of_open": "{started} / {open}",
+      "more_projects": "{count, plural, one {+# projekt więcej} few {+# projekty więcej} many {+# projektów więcej} other {+# projektu więcej}}",
+      "no_work": "Brak przypisanych elementów pracy",
+      "created": "Utworzone: {count}",
+      "no_assignees": "Brak przypisanych osób"
+    },
+    "slack": {
+      "settings": "Ustawienia Slack",
+      "send_now": "Wyślij do kanału Slack",
+      "sent_toast": "Raport został opublikowany na kanale Slack.",
+      "saved_toast": "Zapisano ustawienia raportu Slack.",
+      "title": "Raport postępu w Slack",
+      "description": "Regularne publikowanie na kanale Slack podsumowania: kto nad czym pracuje i na jakim etapie jest każdy projekt.",
+      "webhook_url": "URL przychodzącego webhooka",
+      "webhook_replace_placeholder": "Wklejenie nowego URL zastąpi obecny",
+      "webhook_help": "W Slack należy dodać do kanału aplikację „Incoming Webhooks” i wkleić tutaj otrzymany URL.",
+      "remove_webhook": "Usuń",
+      "schedule": "Wysyłka",
+      "schedule_help": "Godziny są podane w strefie czasowej przestrzeni roboczej. Raport obejmuje ostatni dzień, 7 lub 30 dni.",
+      "monthly_day": "1. dnia miesiąca",
+      "enabled": "Wysyłanie automatyczne",
+      "last_sent": "Ostatnia wysyłka: {date}",
+      "frequency": {
+        "daily": "Codziennie",
+        "weekly": "Co tydzień",
+        "monthly": "Co miesiąc"
+      },
+      "weekdays": {
+        "0": "Poniedziałek",
+        "1": "Wtorek",
+        "2": "Środa",
+        "3": "Czwartek",
+        "4": "Piątek",
+        "5": "Sobota",
+        "6": "Niedziela"
+      }
+    }
   }
 }

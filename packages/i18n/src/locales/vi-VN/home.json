@@ -72,6 +72,16 @@
       "trial_ends_in_days": "Bản dùng thử kết thúc sau {days} ngày",
       "start_subscription": "Bắt đầu đăng ký",
       "explore_business_features": "Khám phá tính năng Business"
+    },
+    "my_active_projects": {
+      "title": "Dự án đang hoạt động của tôi",
+      "count": "{count, plural, one {# dự án} other {# dự án}}",
+      "started": "{count} đang tiến hành",
+      "open": "{count} được giao",
+      "overdue": "{count} quá hạn",
+      "no_assigned": "Không có mục công việc nào được giao cho bạn",
+      "show_all": "Hiển thị tất cả",
+      "show_less": "Hiển thị ít hơn"
     }
   }
 }
